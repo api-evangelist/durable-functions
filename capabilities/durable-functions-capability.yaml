@@ -1,0 +1,764 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Durable Functions HTTP API
+  description: The Azure Durable Functions extension exposes built-in HTTP APIs for managing orchestrations, entities, and
+    task hubs. These HTTP APIs are extensibility webhooks authorized by the Azure Functions host and handled by the Durable
+    Functions extension. Use them to start orchestrations, query status, raise events, terminate, suspend, resume, rewind,
+    signal entities, and purge history.
+  tags:
+  - Durable
+  - Functions
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: durable-functions
+    baseUri: https://myfuncapp.azurewebsites.net
+    description: Azure Durable Functions HTTP API HTTP API.
+    authentication:
+      type: apikey
+      in: query
+      name: code
+      value: '{{DURABLE_FUNCTIONS_TOKEN}}'
+    resources:
+    - name: runtime-webhooks-durabletask-orchestrators-funct
+      path: /runtime/webhooks/durabletask/orchestrators/{functionName}
+      operations:
+      - name: startorchestration
+        method: POST
+        description: Start orchestration
+        inputParameters:
+        - name: functionName
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: runtime-webhooks-durabletask-orchestrators-funct
+      path: /runtime/webhooks/durabletask/orchestrators/{functionName}/{instanceId}
+      operations:
+      - name: startorchestrationwithid
+        method: POST
+        description: Start orchestration with explicit instance ID
+        inputParameters:
+        - name: functionName
+          in: path
+          type: string
+          required: true
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: runtime-webhooks-durabletask-instances
+      path: /runtime/webhooks/durabletask/instances
+      operations:
+      - name: listinstances
+        method: GET
+        description: List instances
+        inputParameters:
+        - name: createdTimeFrom
+          in: query
+          type: string
+        - name: createdTimeTo
+          in: query
+          type: string
+        - name: runtimeStatus
+          in: query
+          type: string
+        - name: instanceIdPrefix
+          in: query
+          type: string
+        - name: showInput
+          in: query
+          type: boolean
+        - name: top
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: purgeinstances
+        method: DELETE
+        description: Purge multiple instance histories
+        inputParameters:
+        - name: createdTimeFrom
+          in: query
+          type: string
+        - name: createdTimeTo
+          in: query
+          type: string
+        - name: runtimeStatus
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: runtime-webhooks-durabletask-instances-instancei
+      path: /runtime/webhooks/durabletask/instances/{instanceId}
+      operations:
+      - name: getinstancestatus
+        method: GET
+        description: Get instance status
+        inputParameters:
+        - name: showHistory
+          in: query
+          type: boolean
+        - name: showHistoryOutput
+          in: query
+          type: boolean
+        - name: showInput
+          in: query
+          type: boolean
+        - name: returnInternalServerErrorOnFailure
+          in: query
+          type: boolean
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: purgeinstance
+        method: DELETE
+        description: Purge single instance history
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: runtime-webhooks-durabletask-instances-instancei
+      path: /runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/{eventName}
+      operations:
+      - name: raiseevent
+        method: POST
+        description: Raise event
+        inputParameters:
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        - name: eventName
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: runtime-webhooks-durabletask-instances-instancei
+      path: /runtime/webhooks/durabletask/instances/{instanceId}/terminate
+      operations:
+      - name: terminateinstance
+        method: POST
+        description: Terminate instance
+        inputParameters:
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        - name: reason
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: runtime-webhooks-durabletask-instances-instancei
+      path: /runtime/webhooks/durabletask/instances/{instanceId}/suspend
+      operations:
+      - name: suspendinstance
+        method: POST
+        description: Suspend instance
+        inputParameters:
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        - name: reason
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: runtime-webhooks-durabletask-instances-instancei
+      path: /runtime/webhooks/durabletask/instances/{instanceId}/resume
+      operations:
+      - name: resumeinstance
+        method: POST
+        description: Resume instance
+        inputParameters:
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        - name: reason
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: runtime-webhooks-durabletask-instances-instancei
+      path: /runtime/webhooks/durabletask/instances/{instanceId}/rewind
+      operations:
+      - name: rewindinstance
+        method: POST
+        description: Rewind instance (preview)
+        inputParameters:
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        - name: reason
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: runtime-webhooks-durabletask-entities-entityname
+      path: /runtime/webhooks/durabletask/entities/{entityName}/{entityKey}
+      operations:
+      - name: getentity
+        method: GET
+        description: Get entity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: signalentity
+        method: POST
+        description: Signal entity
+        inputParameters:
+        - name: op
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: runtime-webhooks-durabletask-entities-entityname
+      path: /runtime/webhooks/durabletask/entities/{entityName}
+      operations:
+      - name: listentities
+        method: GET
+        description: List entities
+        inputParameters:
+        - name: entityName
+          in: path
+          type: string
+          required: true
+        - name: lastOperationTimeFrom
+          in: query
+          type: string
+        - name: lastOperationTimeTo
+          in: query
+          type: string
+        - name: fetchState
+          in: query
+          type: boolean
+        - name: top
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: durable-functions-rest
+    description: REST adapter for Azure Durable Functions HTTP API.
+    resources:
+    - path: /runtime/webhooks/durabletask/orchestrators/{functionName}
+      name: startorchestration
+      operations:
+      - method: POST
+        name: startorchestration
+        description: Start orchestration
+        call: durable-functions.startorchestration
+        with:
+          functionName: rest.functionName
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/orchestrators/{functionName}/{instanceId}
+      name: startorchestrationwithid
+      operations:
+      - method: POST
+        name: startorchestrationwithid
+        description: Start orchestration with explicit instance ID
+        call: durable-functions.startorchestrationwithid
+        with:
+          functionName: rest.functionName
+          instanceId: rest.instanceId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/instances
+      name: listinstances
+      operations:
+      - method: GET
+        name: listinstances
+        description: List instances
+        call: durable-functions.listinstances
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/instances
+      name: purgeinstances
+      operations:
+      - method: DELETE
+        name: purgeinstances
+        description: Purge multiple instance histories
+        call: durable-functions.purgeinstances
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/instances/{instanceId}
+      name: getinstancestatus
+      operations:
+      - method: GET
+        name: getinstancestatus
+        description: Get instance status
+        call: durable-functions.getinstancestatus
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/instances/{instanceId}
+      name: purgeinstance
+      operations:
+      - method: DELETE
+        name: purgeinstance
+        description: Purge single instance history
+        call: durable-functions.purgeinstance
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/{eventName}
+      name: raiseevent
+      operations:
+      - method: POST
+        name: raiseevent
+        description: Raise event
+        call: durable-functions.raiseevent
+        with:
+          instanceId: rest.instanceId
+          eventName: rest.eventName
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/instances/{instanceId}/terminate
+      name: terminateinstance
+      operations:
+      - method: POST
+        name: terminateinstance
+        description: Terminate instance
+        call: durable-functions.terminateinstance
+        with:
+          instanceId: rest.instanceId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/instances/{instanceId}/suspend
+      name: suspendinstance
+      operations:
+      - method: POST
+        name: suspendinstance
+        description: Suspend instance
+        call: durable-functions.suspendinstance
+        with:
+          instanceId: rest.instanceId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/instances/{instanceId}/resume
+      name: resumeinstance
+      operations:
+      - method: POST
+        name: resumeinstance
+        description: Resume instance
+        call: durable-functions.resumeinstance
+        with:
+          instanceId: rest.instanceId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/instances/{instanceId}/rewind
+      name: rewindinstance
+      operations:
+      - method: POST
+        name: rewindinstance
+        description: Rewind instance (preview)
+        call: durable-functions.rewindinstance
+        with:
+          instanceId: rest.instanceId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/entities/{entityName}/{entityKey}
+      name: getentity
+      operations:
+      - method: GET
+        name: getentity
+        description: Get entity
+        call: durable-functions.getentity
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/entities/{entityName}/{entityKey}
+      name: signalentity
+      operations:
+      - method: POST
+        name: signalentity
+        description: Signal entity
+        call: durable-functions.signalentity
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /runtime/webhooks/durabletask/entities/{entityName}
+      name: listentities
+      operations:
+      - method: GET
+        name: listentities
+        description: List entities
+        call: durable-functions.listentities
+        with:
+          entityName: rest.entityName
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: durable-functions-mcp
+    transport: http
+    description: MCP adapter for Azure Durable Functions HTTP API for AI agent use.
+    tools:
+    - name: startorchestration
+      description: Start orchestration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: durable-functions.startorchestration
+      with:
+        functionName: tools.functionName
+      inputParameters:
+      - name: functionName
+        type: string
+        description: functionName
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: startorchestrationwithid
+      description: Start orchestration with explicit instance ID
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: durable-functions.startorchestrationwithid
+      with:
+        functionName: tools.functionName
+        instanceId: tools.instanceId
+      inputParameters:
+      - name: functionName
+        type: string
+        description: functionName
+        required: true
+      - name: instanceId
+        type: string
+        description: instanceId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listinstances
+      description: List instances
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: durable-functions.listinstances
+      with:
+        createdTimeFrom: tools.createdTimeFrom
+        createdTimeTo: tools.createdTimeTo
+        runtimeStatus: tools.runtimeStatus
+        instanceIdPrefix: tools.instanceIdPrefix
+        showInput: tools.showInput
+        top: tools.top
+      inputParameters:
+      - name: createdTimeFrom
+        type: string
+        description: createdTimeFrom
+      - name: createdTimeTo
+        type: string
+        description: createdTimeTo
+      - name: runtimeStatus
+        type: string
+        description: runtimeStatus
+      - name: instanceIdPrefix
+        type: string
+        description: instanceIdPrefix
+      - name: showInput
+        type: boolean
+        description: showInput
+      - name: top
+        type: integer
+        description: top
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: purgeinstances
+      description: Purge multiple instance histories
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: durable-functions.purgeinstances
+      with:
+        createdTimeFrom: tools.createdTimeFrom
+        createdTimeTo: tools.createdTimeTo
+        runtimeStatus: tools.runtimeStatus
+      inputParameters:
+      - name: createdTimeFrom
+        type: string
+        description: createdTimeFrom
+      - name: createdTimeTo
+        type: string
+        description: createdTimeTo
+      - name: runtimeStatus
+        type: string
+        description: runtimeStatus
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getinstancestatus
+      description: Get instance status
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: durable-functions.getinstancestatus
+      with:
+        showHistory: tools.showHistory
+        showHistoryOutput: tools.showHistoryOutput
+        showInput: tools.showInput
+        returnInternalServerErrorOnFailure: tools.returnInternalServerErrorOnFailure
+      inputParameters:
+      - name: showHistory
+        type: boolean
+        description: showHistory
+      - name: showHistoryOutput
+        type: boolean
+        description: showHistoryOutput
+      - name: showInput
+        type: boolean
+        description: showInput
+      - name: returnInternalServerErrorOnFailure
+        type: boolean
+        description: returnInternalServerErrorOnFailure
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: purgeinstance
+      description: Purge single instance history
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: durable-functions.purgeinstance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: raiseevent
+      description: Raise event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: durable-functions.raiseevent
+      with:
+        instanceId: tools.instanceId
+        eventName: tools.eventName
+      inputParameters:
+      - name: instanceId
+        type: string
+        description: instanceId
+        required: true
+      - name: eventName
+        type: string
+        description: eventName
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: terminateinstance
+      description: Terminate instance
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: durable-functions.terminateinstance
+      with:
+        instanceId: tools.instanceId
+        reason: tools.reason
+      inputParameters:
+      - name: instanceId
+        type: string
+        description: instanceId
+        required: true
+      - name: reason
+        type: string
+        description: reason
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: suspendinstance
+      description: Suspend instance
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: durable-functions.suspendinstance
+      with:
+        instanceId: tools.instanceId
+        reason: tools.reason
+      inputParameters:
+      - name: instanceId
+        type: string
+        description: instanceId
+        required: true
+      - name: reason
+        type: string
+        description: reason
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: resumeinstance
+      description: Resume instance
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: durable-functions.resumeinstance
+      with:
+        instanceId: tools.instanceId
+        reason: tools.reason
+      inputParameters:
+      - name: instanceId
+        type: string
+        description: instanceId
+        required: true
+      - name: reason
+        type: string
+        description: reason
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: rewindinstance
+      description: Rewind instance (preview)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: durable-functions.rewindinstance
+      with:
+        instanceId: tools.instanceId
+        reason: tools.reason
+      inputParameters:
+      - name: instanceId
+        type: string
+        description: instanceId
+        required: true
+      - name: reason
+        type: string
+        description: reason
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getentity
+      description: Get entity
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: durable-functions.getentity
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: signalentity
+      description: Signal entity
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: durable-functions.signalentity
+      with:
+        op: tools.op
+      inputParameters:
+      - name: op
+        type: string
+        description: op
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listentities
+      description: List entities
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: durable-functions.listentities
+      with:
+        entityName: tools.entityName
+        lastOperationTimeFrom: tools.lastOperationTimeFrom
+        lastOperationTimeTo: tools.lastOperationTimeTo
+        fetchState: tools.fetchState
+        top: tools.top
+      inputParameters:
+      - name: entityName
+        type: string
+        description: entityName
+        required: true
+      - name: lastOperationTimeFrom
+        type: string
+        description: lastOperationTimeFrom
+      - name: lastOperationTimeTo
+        type: string
+        description: lastOperationTimeTo
+      - name: fetchState
+        type: boolean
+        description: fetchState
+      - name: top
+        type: integer
+        description: top
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    DURABLE_FUNCTIONS_TOKEN: DURABLE_FUNCTIONS_TOKEN
