@@ -1,0 +1,568 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Durable Functions HTTP API — Orchestrations
+  description: 'Azure Durable Functions HTTP API — Orchestrations. 11 operations. Lead operation: List instances. Self-contained
+    Naftiko capability covering one Durable Functions business surface.'
+  tags:
+  - Durable Functions
+  - Orchestrations
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DURABLE_FUNCTIONS_API_KEY: DURABLE_FUNCTIONS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: http-orchestrations
+    baseUri: https://{appName}.azurewebsites.net
+    description: Azure Durable Functions HTTP API — Orchestrations business capability. Self-contained, no shared references.
+    resources:
+    - name: runtime-webhooks-durabletask-instances
+      path: /runtime/webhooks/durabletask/instances
+      operations:
+      - name: listinstances
+        method: GET
+        description: List instances
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: createdTimeFrom
+          in: query
+          type: string
+        - name: createdTimeTo
+          in: query
+          type: string
+        - name: runtimeStatus
+          in: query
+          type: string
+        - name: instanceIdPrefix
+          in: query
+          type: string
+        - name: showInput
+          in: query
+          type: boolean
+        - name: top
+          in: query
+          type: integer
+      - name: purgeinstances
+        method: DELETE
+        description: Purge multiple instance histories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: createdTimeFrom
+          in: query
+          type: string
+        - name: createdTimeTo
+          in: query
+          type: string
+        - name: runtimeStatus
+          in: query
+          type: string
+    - name: runtime-webhooks-durabletask-instances-instanceId
+      path: /runtime/webhooks/durabletask/instances/{instanceId}
+      operations:
+      - name: getinstancestatus
+        method: GET
+        description: Get instance status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: showHistory
+          in: query
+          type: boolean
+        - name: showHistoryOutput
+          in: query
+          type: boolean
+        - name: showInput
+          in: query
+          type: boolean
+        - name: returnInternalServerErrorOnFailure
+          in: query
+          type: boolean
+      - name: purgeinstance
+        method: DELETE
+        description: Purge single instance history
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: runtime-webhooks-durabletask-instances-instanceId-raiseEvent-eventName
+      path: /runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/{eventName}
+      operations:
+      - name: raiseevent
+        method: POST
+        description: Raise event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        - name: eventName
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: runtime-webhooks-durabletask-instances-instanceId-resume
+      path: /runtime/webhooks/durabletask/instances/{instanceId}/resume
+      operations:
+      - name: resumeinstance
+        method: POST
+        description: Resume instance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        - name: reason
+          in: query
+          type: string
+    - name: runtime-webhooks-durabletask-instances-instanceId-rewind
+      path: /runtime/webhooks/durabletask/instances/{instanceId}/rewind
+      operations:
+      - name: rewindinstance
+        method: POST
+        description: Rewind instance (preview)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        - name: reason
+          in: query
+          type: string
+    - name: runtime-webhooks-durabletask-instances-instanceId-suspend
+      path: /runtime/webhooks/durabletask/instances/{instanceId}/suspend
+      operations:
+      - name: suspendinstance
+        method: POST
+        description: Suspend instance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        - name: reason
+          in: query
+          type: string
+    - name: runtime-webhooks-durabletask-instances-instanceId-terminate
+      path: /runtime/webhooks/durabletask/instances/{instanceId}/terminate
+      operations:
+      - name: terminateinstance
+        method: POST
+        description: Terminate instance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        - name: reason
+          in: query
+          type: string
+    - name: runtime-webhooks-durabletask-orchestrators-functionName
+      path: /runtime/webhooks/durabletask/orchestrators/{functionName}
+      operations:
+      - name: startorchestration
+        method: POST
+        description: Start orchestration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: functionName
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: runtime-webhooks-durabletask-orchestrators-functionName-instanceId
+      path: /runtime/webhooks/durabletask/orchestrators/{functionName}/{instanceId}
+      operations:
+      - name: startorchestrationwithid
+        method: POST
+        description: Start orchestration with explicit instance ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: functionName
+          in: path
+          type: string
+          required: true
+        - name: instanceId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: apikey
+      key: code
+      value: '{{env.DURABLE_FUNCTIONS_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: http-orchestrations-rest
+    port: 8080
+    description: REST adapter for Azure Durable Functions HTTP API — Orchestrations. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/runtime/webhooks/durabletask/instances
+      name: runtime-webhooks-durabletask-instances
+      description: REST surface for runtime-webhooks-durabletask-instances.
+      operations:
+      - method: GET
+        name: listinstances
+        description: List instances
+        call: http-orchestrations.listinstances
+        with:
+          createdTimeFrom: rest.createdTimeFrom
+          createdTimeTo: rest.createdTimeTo
+          runtimeStatus: rest.runtimeStatus
+          instanceIdPrefix: rest.instanceIdPrefix
+          showInput: rest.showInput
+          top: rest.top
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: purgeinstances
+        description: Purge multiple instance histories
+        call: http-orchestrations.purgeinstances
+        with:
+          createdTimeFrom: rest.createdTimeFrom
+          createdTimeTo: rest.createdTimeTo
+          runtimeStatus: rest.runtimeStatus
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/runtime/webhooks/durabletask/instances/{instanceid}
+      name: runtime-webhooks-durabletask-instances-instanceid
+      description: REST surface for runtime-webhooks-durabletask-instances-instanceId.
+      operations:
+      - method: GET
+        name: getinstancestatus
+        description: Get instance status
+        call: http-orchestrations.getinstancestatus
+        with:
+          showHistory: rest.showHistory
+          showHistoryOutput: rest.showHistoryOutput
+          showInput: rest.showInput
+          returnInternalServerErrorOnFailure: rest.returnInternalServerErrorOnFailure
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: purgeinstance
+        description: Purge single instance history
+        call: http-orchestrations.purgeinstance
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/runtime/webhooks/durabletask/instances/{instanceid}/raiseevent/{eventname}
+      name: runtime-webhooks-durabletask-instances-instanceid-raiseevent-eventname
+      description: REST surface for runtime-webhooks-durabletask-instances-instanceId-raiseEvent-eventName.
+      operations:
+      - method: POST
+        name: raiseevent
+        description: Raise event
+        call: http-orchestrations.raiseevent
+        with:
+          instanceId: rest.instanceId
+          eventName: rest.eventName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/runtime/webhooks/durabletask/instances/{instanceid}/resume
+      name: runtime-webhooks-durabletask-instances-instanceid-resume
+      description: REST surface for runtime-webhooks-durabletask-instances-instanceId-resume.
+      operations:
+      - method: POST
+        name: resumeinstance
+        description: Resume instance
+        call: http-orchestrations.resumeinstance
+        with:
+          instanceId: rest.instanceId
+          reason: rest.reason
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/runtime/webhooks/durabletask/instances/{instanceid}/rewind
+      name: runtime-webhooks-durabletask-instances-instanceid-rewind
+      description: REST surface for runtime-webhooks-durabletask-instances-instanceId-rewind.
+      operations:
+      - method: POST
+        name: rewindinstance
+        description: Rewind instance (preview)
+        call: http-orchestrations.rewindinstance
+        with:
+          instanceId: rest.instanceId
+          reason: rest.reason
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/runtime/webhooks/durabletask/instances/{instanceid}/suspend
+      name: runtime-webhooks-durabletask-instances-instanceid-suspend
+      description: REST surface for runtime-webhooks-durabletask-instances-instanceId-suspend.
+      operations:
+      - method: POST
+        name: suspendinstance
+        description: Suspend instance
+        call: http-orchestrations.suspendinstance
+        with:
+          instanceId: rest.instanceId
+          reason: rest.reason
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/runtime/webhooks/durabletask/instances/{instanceid}/terminate
+      name: runtime-webhooks-durabletask-instances-instanceid-terminate
+      description: REST surface for runtime-webhooks-durabletask-instances-instanceId-terminate.
+      operations:
+      - method: POST
+        name: terminateinstance
+        description: Terminate instance
+        call: http-orchestrations.terminateinstance
+        with:
+          instanceId: rest.instanceId
+          reason: rest.reason
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/runtime/webhooks/durabletask/orchestrators/{functionname}
+      name: runtime-webhooks-durabletask-orchestrators-functionname
+      description: REST surface for runtime-webhooks-durabletask-orchestrators-functionName.
+      operations:
+      - method: POST
+        name: startorchestration
+        description: Start orchestration
+        call: http-orchestrations.startorchestration
+        with:
+          functionName: rest.functionName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/runtime/webhooks/durabletask/orchestrators/{functionname}/{instanceid}
+      name: runtime-webhooks-durabletask-orchestrators-functionname-instanceid
+      description: REST surface for runtime-webhooks-durabletask-orchestrators-functionName-instanceId.
+      operations:
+      - method: POST
+        name: startorchestrationwithid
+        description: Start orchestration with explicit instance ID
+        call: http-orchestrations.startorchestrationwithid
+        with:
+          functionName: rest.functionName
+          instanceId: rest.instanceId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: http-orchestrations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Durable Functions HTTP API — Orchestrations. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: list-instances
+      description: List instances
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: http-orchestrations.listinstances
+      with:
+        createdTimeFrom: tools.createdTimeFrom
+        createdTimeTo: tools.createdTimeTo
+        runtimeStatus: tools.runtimeStatus
+        instanceIdPrefix: tools.instanceIdPrefix
+        showInput: tools.showInput
+        top: tools.top
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: purge-multiple-instance-histories
+      description: Purge multiple instance histories
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: http-orchestrations.purgeinstances
+      with:
+        createdTimeFrom: tools.createdTimeFrom
+        createdTimeTo: tools.createdTimeTo
+        runtimeStatus: tools.runtimeStatus
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-instance-status
+      description: Get instance status
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: http-orchestrations.getinstancestatus
+      with:
+        showHistory: tools.showHistory
+        showHistoryOutput: tools.showHistoryOutput
+        showInput: tools.showInput
+        returnInternalServerErrorOnFailure: tools.returnInternalServerErrorOnFailure
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: purge-single-instance-history
+      description: Purge single instance history
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: http-orchestrations.purgeinstance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: raise-event
+      description: Raise event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: http-orchestrations.raiseevent
+      with:
+        instanceId: tools.instanceId
+        eventName: tools.eventName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: resume-instance
+      description: Resume instance
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: http-orchestrations.resumeinstance
+      with:
+        instanceId: tools.instanceId
+        reason: tools.reason
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: rewind-instance-preview
+      description: Rewind instance (preview)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: http-orchestrations.rewindinstance
+      with:
+        instanceId: tools.instanceId
+        reason: tools.reason
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: suspend-instance
+      description: Suspend instance
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: http-orchestrations.suspendinstance
+      with:
+        instanceId: tools.instanceId
+        reason: tools.reason
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: terminate-instance
+      description: Terminate instance
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: http-orchestrations.terminateinstance
+      with:
+        instanceId: tools.instanceId
+        reason: tools.reason
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: start-orchestration
+      description: Start orchestration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: http-orchestrations.startorchestration
+      with:
+        functionName: tools.functionName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: start-orchestration-explicit-instance-id
+      description: Start orchestration with explicit instance ID
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: http-orchestrations.startorchestrationwithid
+      with:
+        functionName: tools.functionName
+        instanceId: tools.instanceId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
