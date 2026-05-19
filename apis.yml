@@ -15,7 +15,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/durable-functions/refs/heads/main/apis.yml
 created: '2026-03-27'
-modified: '2026-04-28'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
   - aid: durable-functions:durable-functions-http-api
@@ -49,6 +49,9 @@ common:
     url: https://github.com/Azure
   - type: Repository
     url: https://github.com/Azure/azure-functions-durable-extension
+  - name: MCP Server
+    url: https://github.com/Azure/azure-functions-mcp-extension
+    type: MCPServer
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
