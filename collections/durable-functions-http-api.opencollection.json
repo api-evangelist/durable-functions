@@ -1,0 +1,632 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Durable Functions HTTP API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "code",
+      "value": "{{code}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orchestrations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Start orchestration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/orchestrators/:functionName",
+            "params": [
+              {
+                "name": "functionName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Starts a new instance of the specified orchestrator function."
+        },
+        {
+          "info": {
+            "name": "Start orchestration with explicit instance ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/orchestrators/:functionName/:instanceId",
+            "params": [
+              {
+                "name": "functionName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Start orchestration with explicit instance ID"
+        },
+        {
+          "info": {
+            "name": "List instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/instances",
+            "params": [
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "createdTimeFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "createdTimeTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "runtimeStatus",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "instanceIdPrefix",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "showInput",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "top",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Queries the status of multiple orchestration instances."
+        },
+        {
+          "info": {
+            "name": "Purge multiple instance histories",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/instances",
+            "params": [
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "createdTimeFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "createdTimeTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "runtimeStatus",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Purge multiple instance histories"
+        },
+        {
+          "info": {
+            "name": "Get instance status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/instances/:instanceId",
+            "params": [
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "showHistory",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "showHistoryOutput",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "showInput",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "returnInternalServerErrorOnFailure",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get instance status"
+        },
+        {
+          "info": {
+            "name": "Purge single instance history",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/instances/:instanceId",
+            "params": [
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Purge single instance history"
+        },
+        {
+          "info": {
+            "name": "Raise event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/instances/:instanceId/raiseEvent/:eventName",
+            "params": [
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sends an event notification to a running orchestration instance."
+        },
+        {
+          "info": {
+            "name": "Terminate instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/instances/:instanceId/terminate",
+            "params": [
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reason",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Terminate instance"
+        },
+        {
+          "info": {
+            "name": "Suspend instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/instances/:instanceId/suspend",
+            "params": [
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reason",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Suspend instance"
+        },
+        {
+          "info": {
+            "name": "Resume instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/instances/:instanceId/resume",
+            "params": [
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reason",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Resume instance"
+        },
+        {
+          "info": {
+            "name": "Rewind instance (preview)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/instances/:instanceId/rewind",
+            "params": [
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reason",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Rewind instance (preview)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Entities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/entities/:entityName/:entityKey",
+            "params": [
+              {
+                "name": "entityName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entityKey",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get entity"
+        },
+        {
+          "info": {
+            "name": "Signal entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/entities/:entityName/:entityKey",
+            "params": [
+              {
+                "name": "entityName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entityKey",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "op",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sends a one-way operation message to a Durable Entity."
+        },
+        {
+          "info": {
+            "name": "List entities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/entities/:entityName",
+            "params": [
+              {
+                "name": "entityName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastOperationTimeFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastOperationTimeTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fetchState",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "top",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List entities"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
