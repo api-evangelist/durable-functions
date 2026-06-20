@@ -5,7 +5,7 @@ description: >-
   Azure Functions. The extension exposes built-in HTTP APIs for managing orchestrations, durable entities, and task
   hubs.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - API Composition
   - Durable Execution
