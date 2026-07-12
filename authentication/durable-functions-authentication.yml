@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/durable-functions-http-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: systemKey
+  type: apiKey
+  in: query
+  parameter: code
+  sources:
+  - openapi/durable-functions-http-api-openapi.yml

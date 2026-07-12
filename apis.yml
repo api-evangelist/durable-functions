@@ -37,6 +37,12 @@ apis:
       - type: OpenAPI
         url: openapi/durable-functions-http-api-openapi.yml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/durable-functions-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/durable-functions-domain-security.yml
+  - type: Authentication
+    url: authentication/durable-functions-authentication.yml
   - type: Website
     url: https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview
   - type: Documentation
