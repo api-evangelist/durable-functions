@@ -1,0 +1,157 @@
+openapi: 3.1.0
+info:
+  title: Azure Durable Functions HTTP Entities API
+  description: The Azure Durable Functions extension exposes built-in HTTP APIs for managing orchestrations, entities, and task hubs. These HTTP APIs are extensibility webhooks authorized by the Azure Functions host and handled by the Durable Functions extension. Use them to start orchestrations, query status, raise events, terminate, suspend, resume, rewind, signal entities, and purge history.
+  version: v2
+  contact:
+    name: Microsoft Azure
+    url: https://learn.microsoft.com/en-us/azure/azure-functions/durable/
+servers:
+- url: https://{appName}.azurewebsites.net
+  description: Function App in Azure
+  variables:
+    appName:
+      default: myfuncapp
+- url: http://localhost:7071
+  description: Local development with Azure Functions Core Tools
+security:
+- systemKey: []
+tags:
+- name: Entities
+  description: Durable entity management
+paths:
+  /runtime/webhooks/durabletask/entities/{entityName}/{entityKey}:
+    parameters:
+    - name: entityName
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: entityKey
+      in: path
+      required: true
+      schema:
+        type: string
+    - $ref: '#/components/parameters/TaskHub'
+    - $ref: '#/components/parameters/Connection'
+    - $ref: '#/components/parameters/Code'
+    get:
+      operationId: getEntity
+      summary: Get entity
+      tags:
+      - Entities
+      responses:
+        '200':
+          description: Entity state
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Entity not found
+    post:
+      operationId: signalEntity
+      summary: Signal entity
+      description: Sends a one-way operation message to a Durable Entity.
+      tags:
+      - Entities
+      parameters:
+      - name: op
+        in: query
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema: {}
+      responses:
+        '202':
+          description: Signal accepted
+        '400':
+          description: Bad request
+        '404':
+          description: Entity name not found
+  /runtime/webhooks/durabletask/entities/{entityName}:
+    get:
+      operationId: listEntities
+      summary: List entities
+      tags:
+      - Entities
+      parameters:
+      - name: entityName
+        in: path
+        required: true
+        schema:
+          type: string
+      - $ref: '#/components/parameters/TaskHub'
+      - $ref: '#/components/parameters/Connection'
+      - $ref: '#/components/parameters/Code'
+      - name: lastOperationTimeFrom
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: lastOperationTimeTo
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: fetchState
+        in: query
+        schema:
+          type: boolean
+      - name: top
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Entity'
+components:
+  parameters:
+    Code:
+      name: code
+      in: query
+      schema:
+        type: string
+    TaskHub:
+      name: taskHub
+      in: query
+      schema:
+        type: string
+    Connection:
+      name: connection
+      in: query
+      schema:
+        type: string
+  schemas:
+    Entity:
+      type: object
+      properties:
+        entityId:
+          type: object
+          properties:
+            key:
+              type: string
+            name:
+              type: string
+        lastOperationTime:
+          type: string
+          format: date-time
+        state:
+          type: object
+          additionalProperties: true
+  securitySchemes:
+    systemKey:
+      type: apiKey
+      in: query
+      name: code
+externalDocs:
+  description: Durable Functions HTTP API documentation
+  url: https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api
