@@ -5,7 +5,20 @@ description: >-
   Azure Functions. The extension exposes built-in HTTP APIs for managing orchestrations, durable entities, and task
   hubs.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/durable-functions.png
 tags:
   - API Composition
   - Durable Execution
@@ -16,26 +29,44 @@ created: '2026-03-27'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: durable-functions:durable-functions-http-api
-    name: Azure Durable Functions HTTP API
-    description: >-
-      Built-in HTTP APIs exposed by the Durable Functions extension for starting orchestrations, querying instance
-      status, raising events, terminating, suspending, resuming, rewinding, signaling entities, and purging history.
-    humanURL: https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api
-    baseURL: https://{appName}.azurewebsites.net
-    tags:
-      - Durable Execution
-      - Serverless Orchestration
-      - Workflow
-    properties:
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/azure/azure-functions/durable/
-      - type: HTTP API Reference
-        url: https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api
-      - type: GettingStarted
-        url: https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-create-first-csharp
-      - type: OpenAPI
-        url: openapi/durable-functions-http-api-openapi.yml
+- aid: durable-functions:durable-functions-entities-api
+  name: Azure Durable Functions Entities API
+  description: Durable entity management
+  humanURL: >-
+    https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api
+  baseURL: https://{appName}.azurewebsites.net
+  tags:
+  - Entities
+  properties:
+  - type: OpenAPI
+    url: openapi/durable-functions-entities-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/azure-functions/durable/
+  - type: HTTP API Reference
+    url: >-
+      https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api
+  - type: GettingStarted
+    url: >-
+      https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-create-first-csharp
+- aid: durable-functions:durable-functions-orchestrations-api
+  name: Azure Durable Functions Orchestrations API
+  description: Orchestration instance management
+  humanURL: >-
+    https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api
+  baseURL: https://{appName}.azurewebsites.net
+  tags:
+  - Orchestrations
+  properties:
+  - type: OpenAPI
+    url: openapi/durable-functions-orchestrations-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/azure-functions/durable/
+  - type: HTTP API Reference
+    url: >-
+      https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api
+  - type: GettingStarted
+    url: >-
+      https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-create-first-csharp
 common:
   - type: AgenticAccess
     url: agentic-access/durable-functions-agentic-access.yml
