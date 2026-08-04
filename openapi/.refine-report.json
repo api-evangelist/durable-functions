@@ -1,0 +1,16 @@
+{
+  "provider": "durable-functions",
+  "sources": [
+    "durable-functions-entities-api-openapi.yml",
+    "durable-functions-orchestrations-api-openapi.yml"
+  ],
+  "outputs": [
+    "durable-functions-entities-api-openapi.yml",
+    "durable-functions-orchestrations-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
