@@ -68,6 +68,19 @@ apis:
     url: >-
       https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-create-first-csharp
 common:
+  - type: IssueTracker
+    url: https://github.com/Azure/azure-functions-durable-extension/issues
+  - type: Releases
+    url: https://github.com/Azure/azure-functions-durable-extension/releases
+  - type: SecurityPolicy
+    url: https://github.com/Azure/azure-functions-durable-extension/blob/dev/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/Azure/.github/blob/main/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/Azure/azure-functions-durable-extension/blob/dev/CONTRIBUTING.md
+  - type: License
+    name: MIT
+    url: https://github.com/Azure/azure-functions-durable-extension/blob/dev/LICENSE
   - type: AgenticAccess
     url: agentic-access/durable-functions-agentic-access.yml
   - type: VulnerabilityDisclosure
