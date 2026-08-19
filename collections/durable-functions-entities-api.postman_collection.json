@@ -1,0 +1,824 @@
+{
+  "item": [
+    {
+      "id": "ebd5fa75-7299-4202-ad52-d3c5ad1134c2",
+      "name": "Entities",
+      "description": {
+        "content": "Durable entity management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ca819089-56a7-4fa1-be72-7038c1772810",
+          "name": "Get entity",
+          "request": {
+            "name": "Get entity",
+            "description": {},
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "entities",
+                ":entityName",
+                ":entityKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityKey",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cdb12b0b-bce0-414d-8461-9fde466f2834",
+              "name": "Entity state",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "entities",
+                    ":entityName",
+                    ":entityKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityKey",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c560a556-4a09-40e5-82f9-08ab3036d69b",
+              "name": "Entity not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "entities",
+                    ":entityName",
+                    ":entityKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityKey",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf3ca384-6f37-4814-af84-dde37562d4c0",
+          "name": "Signal entity",
+          "request": {
+            "name": "Signal entity",
+            "description": {
+              "content": "Sends a one-way operation message to a Durable Entity.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "entities",
+                ":entityName",
+                ":entityKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "op",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityKey",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0c2bd0e6-5cee-49c9-a3cb-c72098c39623",
+              "name": "Signal accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "entities",
+                    ":entityName",
+                    ":entityKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "op",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityKey",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "143e2188-995d-4ab9-b1ab-acb68e488664",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "entities",
+                    ":entityName",
+                    ":entityKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "op",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityKey",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "65ea666e-a41d-4eb2-950b-450a25864e9b",
+              "name": "Entity name not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "entities",
+                    ":entityName",
+                    ":entityKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "op",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityKey",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "595b1fac-a6a1-49d9-96b2-447e7926e912",
+          "name": "List entities",
+          "request": {
+            "name": "List entities",
+            "description": {},
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "entities",
+                ":entityName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastOperationTimeFrom",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastOperationTimeTo",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fetchState",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "top",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a8ebcb8a-5a57-43ef-bb6d-0aba2e4092a5",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "entities",
+                    ":entityName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lastOperationTimeFrom",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastOperationTimeTo",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "fetchState",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"entityId\": {\n      \"key\": \"string\",\n      \"name\": \"string\"\n    },\n    \"lastOperationTime\": \"1993-08-20T12:05:16.245Z\",\n    \"state\": {\n      \"key_0\": \"string\"\n    }\n  },\n  {\n    \"entityId\": {\n      \"key\": \"string\",\n      \"name\": \"string\"\n    },\n    \"lastOperationTime\": \"1961-03-07T04:13:13.482Z\",\n    \"state\": {\n      \"key_0\": 2965.605560693725,\n      \"key_1\": false,\n      \"key_2\": \"string\",\n      \"key_3\": 7540\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myfuncapp",
+      "key": "appName"
+    },
+    {
+      "type": "string",
+      "value": "https://{{appName}}.azurewebsites.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "code"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ce14001a-318d-4c62-b5af-3db1eb785dc3",
+    "name": "Azure Durable Functions HTTP Entities API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Azure Durable Functions extension exposes built-in HTTP APIs for managing orchestrations, entities, and task hubs. These HTTP APIs are extensibility webhooks authorized by the Azure Functions host and handled by the Durable Functions extension. Use them to start orchestrations, query status, raise events, terminate, suspend, resume, rewind, signal entities, and purge history.\n\nContact Support:\n Name: Microsoft Azure",
+      "type": "text/plain"
+    }
+  }
+}

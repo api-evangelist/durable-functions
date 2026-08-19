@@ -1,0 +1,3093 @@
+{
+  "item": [
+    {
+      "id": "5d84155d-5e8c-41c9-b449-3fbecbadda1f",
+      "name": "Orchestrations",
+      "description": {
+        "content": "Orchestration instance management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "05dbb5ea-7b16-4f0c-8dd2-f02c21c8d028",
+          "name": "Start orchestration",
+          "request": {
+            "name": "Start orchestration",
+            "description": {
+              "content": "Starts a new instance of the specified orchestrator function.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "orchestrators",
+                ":functionName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "functionName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"string\",\n  \"key_1\": 8327.105449042396\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c44f86b2-bc72-441a-acd4-797d8ccee470",
+              "name": "Orchestrator scheduled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "orchestrators",
+                    ":functionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "functionName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 4127,\n  \"key_1\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"statusQueryGetUri\": \"string\",\n  \"sendEventPostUri\": \"string\",\n  \"terminatePostUri\": \"string\",\n  \"purgeHistoryDeleteUri\": \"string\",\n  \"rewindPostUri\": \"string\",\n  \"suspendPostUri\": \"string\",\n  \"resumePostUri\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "286c1c51-4d9e-4714-9dfd-80b9b344c679",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "orchestrators",
+                    ":functionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "functionName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 4127,\n  \"key_1\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca51e399-310b-4022-b441-0f912b2c37d8",
+          "name": "Start orchestration with explicit instance ID",
+          "request": {
+            "name": "Start orchestration with explicit instance ID",
+            "description": {},
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "orchestrators",
+                ":functionName",
+                ":instanceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "functionName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instanceId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"string\",\n  \"key_1\": 8327.105449042396\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "783dc353-d167-41a1-9949-12b540784e9a",
+              "name": "Orchestrator scheduled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "orchestrators",
+                    ":functionName",
+                    ":instanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "functionName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 4127,\n  \"key_1\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"statusQueryGetUri\": \"string\",\n  \"sendEventPostUri\": \"string\",\n  \"terminatePostUri\": \"string\",\n  \"purgeHistoryDeleteUri\": \"string\",\n  \"rewindPostUri\": \"string\",\n  \"suspendPostUri\": \"string\",\n  \"resumePostUri\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "411d4aba-4b5c-454f-b022-063ff04f62b5",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "orchestrators",
+                    ":functionName",
+                    ":instanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "functionName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 4127,\n  \"key_1\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b4a274c-c544-4f1f-9189-934621f83914",
+          "name": "List instances",
+          "request": {
+            "name": "List instances",
+            "description": {
+              "content": "Queries the status of multiple orchestration instances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "instances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "createdTimeFrom",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "createdTimeTo",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "runtimeStatus",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "instanceIdPrefix",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "showInput",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "top",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8581dd90-ea6e-4bd6-b9d9-d74c353a4f35",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "createdTimeFrom",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "createdTimeTo",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "runtimeStatus",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instanceIdPrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "showInput",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"instanceId\": \"string\",\n    \"runtimeStatus\": \"Running\",\n    \"input\": \"\",\n    \"customStatus\": \"\",\n    \"output\": \"\",\n    \"createdTime\": \"2010-09-08T19:24:12.747Z\",\n    \"lastUpdatedTime\": \"1978-05-24T09:30:27.302Z\",\n    \"historyEvents\": [\n      {\n        \"key_0\": false\n      },\n      {\n        \"key_0\": false,\n        \"key_1\": 9500\n      }\n    ]\n  },\n  {\n    \"instanceId\": \"string\",\n    \"runtimeStatus\": \"Running\",\n    \"input\": \"\",\n    \"customStatus\": \"\",\n    \"output\": \"\",\n    \"createdTime\": \"2003-03-05T05:20:04.819Z\",\n    \"lastUpdatedTime\": \"1958-01-18T22:57:15.142Z\",\n    \"historyEvents\": [\n      {\n        \"key_0\": 1001,\n        \"key_1\": true\n      },\n      {\n        \"key_0\": \"string\",\n        \"key_1\": 9772\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e5ead46-ecd0-41c4-8417-ce1085c8d516",
+          "name": "Purge multiple instance histories",
+          "request": {
+            "name": "Purge multiple instance histories",
+            "description": {},
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "instances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "createdTimeFrom",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "createdTimeTo",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "runtimeStatus",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "63d06d7f-d9c6-4af1-9f31-31c158ba9350",
+              "name": "Purge result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "createdTimeFrom",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "createdTimeTo",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "runtimeStatus",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"instancesDeleted\": 8550\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6d2073ef-1a7d-4515-8abb-8428452cada9",
+              "name": "No instances matched",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "createdTimeFrom",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "createdTimeTo",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "runtimeStatus",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8a00c30-3ed2-43ff-a6a3-6edf6db6b177",
+          "name": "Get instance status",
+          "request": {
+            "name": "Get instance status",
+            "description": {},
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "instances",
+                ":instanceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "showHistory",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "showHistoryOutput",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "showInput",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "returnInternalServerErrorOnFailure",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instanceId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b753eec-1a35-4da0-bd14-1565ed39fd20",
+              "name": "Instance completed or failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "showHistory",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showHistoryOutput",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showInput",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "returnInternalServerErrorOnFailure",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"instanceId\": \"string\",\n  \"runtimeStatus\": \"Failed\",\n  \"input\": \"\",\n  \"customStatus\": \"\",\n  \"output\": \"\",\n  \"createdTime\": \"1950-01-25T21:24:30.909Z\",\n  \"lastUpdatedTime\": \"2015-06-25T03:08:43.264Z\",\n  \"historyEvents\": [\n    {\n      \"key_0\": 1337,\n      \"key_1\": false\n    },\n    {\n      \"key_0\": 9049.602249543326,\n      \"key_1\": 535.729850525819,\n      \"key_2\": 458,\n      \"key_3\": 11.624947167485633\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a750b97-0949-4b9c-8b1c-9aaae59e160f",
+              "name": "Instance running",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "showHistory",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showHistoryOutput",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showInput",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "returnInternalServerErrorOnFailure",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"instanceId\": \"string\",\n  \"runtimeStatus\": \"Failed\",\n  \"input\": \"\",\n  \"customStatus\": \"\",\n  \"output\": \"\",\n  \"createdTime\": \"1950-01-25T21:24:30.909Z\",\n  \"lastUpdatedTime\": \"2015-06-25T03:08:43.264Z\",\n  \"historyEvents\": [\n    {\n      \"key_0\": 1337,\n      \"key_1\": false\n    },\n    {\n      \"key_0\": 9049.602249543326,\n      \"key_1\": 535.729850525819,\n      \"key_2\": 458,\n      \"key_3\": 11.624947167485633\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a14d5510-b3b2-4b18-835c-47684146a900",
+              "name": "Instance not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "showHistory",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showHistoryOutput",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showInput",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "returnInternalServerErrorOnFailure",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f80de1c-acf5-44dc-83ea-814b710f73ca",
+          "name": "Purge single instance history",
+          "request": {
+            "name": "Purge single instance history",
+            "description": {},
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "instances",
+                ":instanceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instanceId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fec6b4e9-bffa-452c-876d-5e0422238d92",
+              "name": "Purge result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"instancesDeleted\": 8550\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "99005d1b-9bc6-4ca6-b189-d1cdf270dbb3",
+              "name": "Instance not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7b0b193-00fc-4315-b47c-39ac2712e685",
+          "name": "Raise event",
+          "request": {
+            "name": "Raise event",
+            "description": {
+              "content": "Sends an event notification to a running orchestration instance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "instances",
+                ":instanceId",
+                "raiseEvent",
+                ":eventName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instanceId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "639c2e87-205a-4fd4-91c1-4c521f40cb5b",
+              "name": "Event accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "raiseEvent",
+                    ":eventName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3e6ab825-799e-45d5-be3f-ae8927185e11",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "raiseEvent",
+                    ":eventName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c0bfbb1e-619f-42d4-ade9-ea276b41a026",
+              "name": "Instance not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "raiseEvent",
+                    ":eventName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76b52ade-6fdc-4dea-823a-cd6f8a85ff31",
+              "name": "Instance no longer accepting events",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "raiseEvent",
+                    ":eventName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c444d8bf-9ae3-4c60-893b-9a6e0ec32f18",
+          "name": "Terminate instance",
+          "request": {
+            "name": "Terminate instance",
+            "description": {},
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "instances",
+                ":instanceId",
+                "terminate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reason",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instanceId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "11a63505-f940-4171-8d08-1f2d62f62703",
+              "name": "Termination accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "terminate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "78c506ec-4fbc-4ac0-94bd-9ce4ed82700a",
+              "name": "Instance not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "terminate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "991c6b82-754d-41c6-b6f7-f615e9529306",
+              "name": "Instance already completed or failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "terminate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46ab3507-a0cd-440b-824e-9da78968db5f",
+          "name": "Suspend instance",
+          "request": {
+            "name": "Suspend instance",
+            "description": {},
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "instances",
+                ":instanceId",
+                "suspend"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reason",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instanceId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b0628ecf-a77a-44c6-802d-d09bdc57052d",
+              "name": "Suspension accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "suspend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f2ca181d-55f8-4e8c-b6f1-0f4fcf1dfd49",
+              "name": "Instance not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "suspend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5d39592f-2180-4e85-8dcf-62c863bcf721",
+              "name": "Instance cannot be suspended",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "suspend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05c5acbb-08f2-4ae7-997b-748962b19847",
+          "name": "Resume instance",
+          "request": {
+            "name": "Resume instance",
+            "description": {},
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "instances",
+                ":instanceId",
+                "resume"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reason",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instanceId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "551e0684-e85d-4bb0-9e52-c0043a47099f",
+              "name": "Resume accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "resume"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a5314d83-d0bb-4a77-af26-e3c5ec2a3a36",
+              "name": "Instance not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "resume"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2eb5f286-d6db-4624-9bea-0545998c9fc3",
+              "name": "Instance cannot be resumed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "resume"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2735e55-8779-44ab-a2a4-0eb892003a72",
+          "name": "Rewind instance (preview)",
+          "request": {
+            "name": "Rewind instance (preview)",
+            "description": {},
+            "url": {
+              "path": [
+                "runtime",
+                "webhooks",
+                "durabletask",
+                "instances",
+                ":instanceId",
+                "rewind"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reason",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "taskHub",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "connection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instanceId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{appName}}",
+                  "key": "appName"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d1cff9c-6bea-4db3-addb-41b7a41cbe38",
+              "name": "Rewind accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "rewind"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f19924c1-023a-4a9c-aa61-49629dfbde3a",
+              "name": "Instance not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "rewind"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e7ea2472-a753-419d-a4e2-21e3bfd5b012",
+              "name": "Instance cannot be rewound",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "runtime",
+                    "webhooks",
+                    "durabletask",
+                    "instances",
+                    ":instanceId",
+                    "rewind"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskHub",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instanceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{appName}}",
+                      "key": "appName"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myfuncapp",
+      "key": "appName"
+    },
+    {
+      "type": "string",
+      "value": "https://{{appName}}.azurewebsites.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "code"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fdd0f4e5-c484-4a1e-b3bd-e0959c295a60",
+    "name": "Azure Durable Functions HTTP Entities Orchestrations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Azure Durable Functions extension exposes built-in HTTP APIs for managing orchestrations, entities, and task hubs. These HTTP APIs are extensibility webhooks authorized by the Azure Functions host and handled by the Durable Functions extension. Use them to start orchestrations, query status, raise events, terminate, suspend, resume, rewind, signal entities, and purge history.\n\nContact Support:\n Name: Microsoft Azure",
+      "type": "text/plain"
+    }
+  }
+}

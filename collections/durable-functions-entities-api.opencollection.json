@@ -1,0 +1,164 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Durable Functions HTTP Entities API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "code",
+      "value": "{{code}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Entities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/entities/:entityName/:entityKey",
+            "params": [
+              {
+                "name": "entityName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entityKey",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get entity"
+        },
+        {
+          "info": {
+            "name": "Signal entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/entities/:entityName/:entityKey",
+            "params": [
+              {
+                "name": "entityName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entityKey",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "op",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sends a one-way operation message to a Durable Entity."
+        },
+        {
+          "info": {
+            "name": "List entities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{appName}.azurewebsites.net/runtime/webhooks/durabletask/entities/:entityName",
+            "params": [
+              {
+                "name": "entityName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskHub",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "connection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastOperationTimeFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastOperationTimeTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fetchState",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "top",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List entities"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
