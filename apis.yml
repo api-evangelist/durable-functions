@@ -23,6 +23,11 @@ tags:
   - API Composition
   - Durable Execution
   - Serverless Orchestration
+  - Workflows
+tags_raw:
+  - API Composition
+  - Durable Execution
+  - Serverless Orchestration
   - Workflow
 url: https://raw.githubusercontent.com/api-evangelist/durable-functions/refs/heads/main/apis.yml
 created: '2026-03-27'
