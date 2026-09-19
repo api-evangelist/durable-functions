@@ -74,6 +74,8 @@ apis:
     https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api
   baseURL: https://{appName}.azurewebsites.net
   tags:
+  - Orchestration
+  tags_raw:
   - Orchestrations
   properties:
   - type: OpenAPI
