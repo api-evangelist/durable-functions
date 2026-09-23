@@ -1,8 +1,7 @@
 {
   "provider": "durable-functions",
   "sources": [
-    "durable-functions-entities-api-openapi.yml",
-    "durable-functions-orchestrations-api-openapi.yml"
+    "_original/durable-functions-http-api-openapi.yml"
   ],
   "outputs": [
     "durable-functions-entities-api-openapi.yml",
@@ -11,6 +10,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "durable-functions-http-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "durable-functions-entities-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "durable-functions-orchestrations-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

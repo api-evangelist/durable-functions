@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Azure Durable Functions HTTP Entities API
   description: The Azure Durable Functions extension exposes built-in HTTP APIs for managing orchestrations, entities, and task hubs. These HTTP APIs are extensibility webhooks authorized by the Azure Functions host and handled by the Durable Functions extension. Use them to start orchestrations, query status, raise events, terminate, suspend, resume, rewind, signal entities, and purge history.
@@ -115,13 +115,13 @@ paths:
                   $ref: '#/components/schemas/Entity'
 components:
   parameters:
-    Code:
-      name: code
+    TaskHub:
+      name: taskHub
       in: query
       schema:
         type: string
-    TaskHub:
-      name: taskHub
+    Code:
+      name: code
       in: query
       schema:
         type: string
