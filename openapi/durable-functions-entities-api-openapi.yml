@@ -115,11 +115,6 @@ paths:
                   $ref: '#/components/schemas/Entity'
 components:
   parameters:
-    TaskHub:
-      name: taskHub
-      in: query
-      schema:
-        type: string
     Code:
       name: code
       in: query
@@ -127,6 +122,11 @@ components:
         type: string
     Connection:
       name: connection
+      in: query
+      schema:
+        type: string
+    TaskHub:
+      name: taskHub
       in: query
       schema:
         type: string
