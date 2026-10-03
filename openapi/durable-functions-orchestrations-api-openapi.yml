@@ -367,7 +367,42 @@ paths:
         '410':
           description: Instance cannot be rewound
 components:
+  parameters:
+    Connection:
+      name: connection
+      in: query
+      schema:
+        type: string
+    TaskHub:
+      name: taskHub
+      in: query
+      schema:
+        type: string
+    Code:
+      name: code
+      in: query
+      schema:
+        type: string
   schemas:
+    StartResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        statusQueryGetUri:
+          type: string
+        sendEventPostUri:
+          type: string
+        terminatePostUri:
+          type: string
+        purgeHistoryDeleteUri:
+          type: string
+        rewindPostUri:
+          type: string
+        suspendPostUri:
+          type: string
+        resumePostUri:
+          type: string
     InstanceStatus:
       type: object
       properties:
@@ -402,41 +437,6 @@ components:
       properties:
         instancesDeleted:
           type: integer
-    StartResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        statusQueryGetUri:
-          type: string
-        sendEventPostUri:
-          type: string
-        terminatePostUri:
-          type: string
-        purgeHistoryDeleteUri:
-          type: string
-        rewindPostUri:
-          type: string
-        suspendPostUri:
-          type: string
-        resumePostUri:
-          type: string
-  parameters:
-    TaskHub:
-      name: taskHub
-      in: query
-      schema:
-        type: string
-    Code:
-      name: code
-      in: query
-      schema:
-        type: string
-    Connection:
-      name: connection
-      in: query
-      schema:
-        type: string
   securitySchemes:
     systemKey:
       type: apiKey

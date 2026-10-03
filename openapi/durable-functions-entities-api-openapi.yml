@@ -114,22 +114,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/Entity'
 components:
-  parameters:
-    Code:
-      name: code
-      in: query
-      schema:
-        type: string
-    Connection:
-      name: connection
-      in: query
-      schema:
-        type: string
-    TaskHub:
-      name: taskHub
-      in: query
-      schema:
-        type: string
   schemas:
     Entity:
       type: object
@@ -147,6 +131,22 @@ components:
         state:
           type: object
           additionalProperties: true
+  parameters:
+    Code:
+      name: code
+      in: query
+      schema:
+        type: string
+    Connection:
+      name: connection
+      in: query
+      schema:
+        type: string
+    TaskHub:
+      name: taskHub
+      in: query
+      schema:
+        type: string
   securitySchemes:
     systemKey:
       type: apiKey
