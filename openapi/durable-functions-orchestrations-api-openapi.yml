@@ -367,22 +367,6 @@ paths:
         '410':
           description: Instance cannot be rewound
 components:
-  parameters:
-    Connection:
-      name: connection
-      in: query
-      schema:
-        type: string
-    TaskHub:
-      name: taskHub
-      in: query
-      schema:
-        type: string
-    Code:
-      name: code
-      in: query
-      schema:
-        type: string
   schemas:
     StartResponse:
       type: object
@@ -437,6 +421,22 @@ components:
       properties:
         instancesDeleted:
           type: integer
+  parameters:
+    Connection:
+      name: connection
+      in: query
+      schema:
+        type: string
+    TaskHub:
+      name: taskHub
+      in: query
+      schema:
+        type: string
+    Code:
+      name: code
+      in: query
+      schema:
+        type: string
   securitySchemes:
     systemKey:
       type: apiKey
