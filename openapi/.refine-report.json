@@ -1,22 +1,69 @@
 {
   "provider": "durable-functions",
   "sources": [
-    "_original/durable-functions-http-api-openapi.yml"
+    "_original/durable-functions-openapi.json"
   ],
   "outputs": [
-    "durable-functions-entities-api-openapi.yml",
-    "durable-functions-orchestrations-api-openapi.yml"
+    "durable-functions-domains-api-openapi.yml",
+    "durable-functions-projects-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
-    "durable-functions-http-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "durable-functions-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "durable-functions-openapi.json: tagged paths GET /domains -> Domains",
+    "durable-functions-openapi.json: tagged paths GET /domains/{domainId} -> Domains",
+    "durable-functions-openapi.json: tagged paths GET /projects -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId} -> Projects",
+    "durable-functions-openapi.json: tagged paths DELETE /projects/{projectId} -> Projects",
+    "durable-functions-openapi.json: tagged paths PATCH /projects/{projectId} -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/export -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/images -> Projects",
+    "durable-functions-openapi.json: tagged paths DELETE /projects/{projectId}/images -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/images/{imageId}/regionproposals -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/images/files -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/images/id -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/images/predictions -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/images/regions -> Projects",
+    "durable-functions-openapi.json: tagged paths DELETE /projects/{projectId}/images/regions -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/images/suggested -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/images/suggested/count -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/images/tagged -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/images/tagged/count -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/images/tags -> Projects",
+    "durable-functions-openapi.json: tagged paths DELETE /projects/{projectId}/images/tags -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/images/untagged -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/images/untagged/count -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/images/urls -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/iterations -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/iterations/{iterationId} -> Projects",
+    "durable-functions-openapi.json: tagged paths DELETE /projects/{projectId}/iterations/{iterationId} -> Projects",
+    "durable-functions-openapi.json: tagged paths PATCH /projects/{projectId}/iterations/{iterationId} -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/iterations/{iterationId}/export -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/iterations/{iterationId}/export -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/iterations/{iterationId}/performance -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/iterations/{iterationId}/performance/images -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/iterations/{iterationId}/performance/images/count -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/iterations/{iterationId}/publish -> Projects",
+    "durable-functions-openapi.json: tagged paths DELETE /projects/{projectId}/iterations/{iterationId}/publish -> Projects",
+    "durable-functions-openapi.json: tagged paths DELETE /projects/{projectId}/predictions -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/predictions/query -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/quicktest/image -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/quicktest/url -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/tags -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/tags -> Projects",
+    "durable-functions-openapi.json: tagged paths GET /projects/{projectId}/tags/{tagId} -> Projects",
+    "durable-functions-openapi.json: tagged paths DELETE /projects/{projectId}/tags/{tagId} -> Projects",
+    "durable-functions-openapi.json: tagged paths PATCH /projects/{projectId}/tags/{tagId} -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/tagsandregions/suggestions -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/{projectId}/train -> Projects",
+    "durable-functions-openapi.json: tagged paths POST /projects/import -> Projects",
+    "durable-functions-openapi.json: declared missing tag: Domains",
+    "durable-functions-openapi.json: declared missing tag: Projects",
+    "apis.yml register: written (+2 apis, 2 total)"
   ],
-  "skipped": [
-    "durable-functions-entities-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "durable-functions-orchestrations-api-openapi.yml: previously refined output, superseded by openapi/_original/"
-  ]
+  "skipped": []
 }
