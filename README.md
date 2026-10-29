@@ -1,4 +1,4 @@
-# Azure Durable Functions (durable-functions)
+# Azure Durable Functions
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,57 +66,124 @@
 
 Azure Durable Functions is a serverless extension for writing stateful workflows and orchestrations in code using Azure Functions. The extension exposes built-in HTTP APIs for managing orchestrations, durable entities, and task hubs.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/durable-functions/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/durable-functions/refs/heads/main/apis.yml)
+**Areas:** API Composition · Durable Execution · Serverless Orchestration · Workflows
 
-## Scope
+## Azure Durable Functions on APIs.io
 
-- **Type:** Index
+Everything profiled for Azure Durable Functions is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/durable-functions/](https://apis.io/providers/durable-functions/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- API Composition
-- Durable Execution
-- Serverless Orchestration
-- Workflow
+- [Azure Durable Functions Entities API](https://apis.io/apis/durable-functions/durable-functions-entities-api/) — Durable entity management
+- [Azure Durable Functions Orchestrations API](https://apis.io/apis/durable-functions/durable-functions-orchestrations-api/) — Orchestration instance management
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-27
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Azure Durable Functions HTTP API
+Model Context Protocol servers that expose the API to agents.
 
-Built-in HTTP APIs exposed by the Durable Functions extension for starting orchestrations, querying instance status, raising events, terminating, suspending, resuming, rewinding, signaling entities, and purging history.
+- [MCP Server](https://apis.io/servers/durable-functions/mcp-server/)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api)
-- **Base URL:** `https://{appName}.azurewebsites.net`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Durable Execution
-- Serverless Orchestration
-- Workflow
+- [Durable Functions Agentic Access](https://apis.io/agentic-access/durable-functions/durable-functions-agentic-access/)
 
-#### Properties
+#### Collections (3)
 
-- [Documentation](https://learn.microsoft.com/en-us/azure/azure-functions/durable/)
-- [H T T P  A P I  Reference](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api)
-- [Getting Started](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-create-first-csharp)
-- [OpenAPI](openapi/durable-functions-http-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/durable-functions-http-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/durable-functions-http-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Azure Durable Functions HTTP Entities API](https://apis.io/collections/durable-functions/open-durable-functions-entities-api/)
+- [Azure Durable Functions HTTP API](https://apis.io/collections/durable-functions/open-durable-functions-http-api/)
+- [Azure Durable Functions HTTP Entities Orchestrations API](https://apis.io/collections/durable-functions/open-durable-functions-orchestrations-api/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Durable Functions Authentication](https://apis.io/security/durable-functions/durable-functions-authentication/)
+- [Durable Functions Domain Security](https://apis.io/security/durable-functions/durable-functions-domain-security/)
+- [Durable Functions Vulnerability Disclosure](https://apis.io/security/durable-functions/durable-functions-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Durable Functions Plans Pricing](https://apis.io/plans/durable-functions/durable-functions-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Durable Functions Rate Limits](https://apis.io/rate-limits/durable-functions/durable-functions-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Durable Functions Finops](https://apis.io/finops/durable-functions/durable-functions-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview)
 - [Documentation](https://learn.microsoft.com/en-us/azure/azure-functions/durable/)
-- [GitHub Organization](https://github.com/Azure)
-- [Repository](https://github.com/Azure/azure-functions-durable-extension)
-- [M C P Server](https://github.com/Azure/azure-functions-mcp-extension)
+- [GitHub](https://github.com/Azure)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 34.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 56.7 |
+| Contract quality | 44.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 7.9 |
+
+**Agent readiness 21.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 17.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/durable-functions/](https://apis.io/providers/durable-functions/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Azure Durable Functions: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/durable-functions/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
